@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <form action="/greet" method="post">
+            <label>Credit Card:</label>
+            <input name="creditcard" type="text">
+            <button type="submit">Greet</button>
+        </form>
+{% endblock %}
