@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <form action="/add" method="post">
+            <label>Title:</label>
+            <input name="title" type="text">
+            <label>Platform:</label>
+            <input name="plat" type="text">
+            <label>Year:</label>
+            <input name="year" type="text">
+            <button type="submit">Add Game</button>
+        </form>
+{% endblock %}
