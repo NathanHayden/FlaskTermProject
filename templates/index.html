@@ -1,9 +1,14 @@
 {% extends "layout.html" %}
 
 {% block body %}
-        <form action="/greet" method="post">
-            <label>Credit Card:</label>
-            <input name="creditcard" type="text">
-            <button type="submit">Greet</button>
-        </form>
+        <a href="/add">Add</a>
+        <ul>
+        {% for game in games %}
+            <li>Title:{{ game.title  }}</li>
+            <li>Year:{{ game.year  }}</li>
+            <li>Platform:{{ game.plat  }}</li>
+            <image height = 128 src="{{ file_location }}/{{ game.image }}"/>
+            <br>
+        {% endfor %}
+        </ul>
 {% endblock %}

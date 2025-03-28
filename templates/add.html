@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <form action="/add" method="post" enctype="multipart/form-data">
+            <label>Title:</label>
+            <input name="title" type="text" >
+            <label>Platform:</label>
+            <input name="plat" type="text" >
+            <label>Year:</label>
+            <input name="year" type="text" >
+            <input name="file" type="file">
+            <button type="submit">Add Game</button>
+        </form>
+        <script src="/static/verify.js"></script>
+{% endblock %}
