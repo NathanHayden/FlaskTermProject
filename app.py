@@ -52,4 +52,7 @@ def add():
         flash("Good job! You have added a new game to your collection", "message")
         return redirect("/")
 
+if __name__ == "__main__":
+   app.run(debug=True, host="0.0.0.0")
+
 
