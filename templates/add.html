@@ -1,23 +1,24 @@
 {% extends "layout.html" %}
 
 {% block body %}
-        <form action="/add" method="post" enctype="multipart/form-data">
-          <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" name="title" aria-describedby="game_name">
-          </div>
-          <div class="mb-3">
-            <label for="plat" class="form-label">Platform</label>
-            <input type="text" class="form-control" id="plat" name="plat">
-          </div>
-          <div class="mb-3">
-            <label for="year" class="form-label">Year</label>
-            <input type="text" class="form-control" id="year" name="year">
-          </div>
-          <div class="mb-3">
-            <input type="file" class="form-control" name="file">
-          </div>
-          <button type="submit" class="btn btn-primary">Add Game</button>
-        </form>
-        <script src="/static/verify.js"></script>
+    <form action="/add" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+        <label for="name" class="form-label">Item Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+        <label for="type" class="form-label">Item Type</label>
+        <input type="text" class="form-control" id="type" name="type" required>
+        </div>
+        <div class="mb-3">
+        <label for="rarity" class="form-label">Item Rarity</label>
+        <input type="text" class="form-control" id="rarity" name="rarity" required>
+        </div>
+        <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="file" class="form-control" id="image" name="image" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Item</button>
+    </form>
+    <script src="/static/verify.js"></script>
 {% endblock %}
