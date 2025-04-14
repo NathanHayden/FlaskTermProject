@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="row">
+    {% if items %}
+      {% for id, item in items.items() %}
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="{{ url_for('static', filename='images/' + item.image) }}" class="card-img-top" alt="{{ item.name }}">
+            <div class="card-body">
+              <p class="card-text">{{ item.name }}</p>
+              <p class="card-text">Typing: {{ item.type }}</p>
+              <p class="card-text">Rarity: {{ item.rarity }}</p>
+              <form method="POST" action="{{ url_for('delete', item_id=id) }}">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h1 class="text-muted text-center">No cards added yet. Go to "Add New Pokémon Card" to get started!</h1>
+    {% endif %}
+  </div>
+{% endblock %}
