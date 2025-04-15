@@ -1,15 +1,12 @@
-
-addEventListener("DOMContentLoaded", () => {
-    let form = document.querySelector("form");
-
-    form.addEventListener("submit", event => {
-        let inputs = document.querySelectorAll("input");
-        for( let input of inputs ) {
-            if( input.value == "") {
-                event.preventDefault()
-                alert("you need to fill this out")
-                return
-            }
-        }
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('cardForm').addEventListener('submit', function(event) {
+      const name = document.getElementById('name').value();
+      const type = document.getElementById('type').value();
+      const rarity = document.getElementById('rarity').value();
+      const image = document.getElementById('image').value();
+      if (!name || !type || !rarity || !image) {
+        alert("All fields are required!");
+        event.preventDefault();
+      }
     });
-})
+  });

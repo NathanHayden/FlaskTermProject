@@ -7,6 +7,7 @@ app = Flask(__name__)
 app.secret_key = "password"
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 Session(app)
 
 file_save_location = "static/images"
@@ -62,6 +63,11 @@ def add():
         flash("Card added successfully!", "success")
         return redirect(url_for("view_cards"))
 
+@app.errorhandler(413)
+def too_large():
+    flash("File is too large. Maximum size is 16MB.", "danger")
+    return redirect(url_for("add"))
+
 @app.route("/delete/<item_id>", methods=["POST"])
 def delete(item_id):
     items = session.get("items", {})
@@ -76,5 +82,3 @@ def delete(item_id):
 
 if __name__ == "__main__":
    app.run(debug=True, host="0.0.0.0")
-
-
