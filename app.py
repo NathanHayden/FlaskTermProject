@@ -42,6 +42,10 @@ def add():
         rarity = request.form["rarity"]
         uploaded_file = request.files.get("image")
 
+        secondary_type = None if secondary_type == "" else secondary_type
+        if primary_type == secondary_type:
+            secondary_type = None
+
         if not all([name, primary_type, rarity, uploaded_file]):
             flash("All fields are required.", "danger")
             return redirect(url_for("add"))
@@ -54,8 +58,6 @@ def add():
         if uploaded_file.filename == "":
             flash("Please select a file to upload.", "danger")
             return redirect(url_for("add"))
-
-        secondary_type = None if secondary_type == "" else secondary_type
 
         if uploaded_file.content_length > 16 * 1024 * 1024:
             flash("File is too large. Maximum size is 16MB.", "danger")

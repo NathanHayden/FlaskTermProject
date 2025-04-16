@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-lg-4">
+<nav class="navbar navbar-expand-lg navbar-dark mb-lg-3">
     <div class="container-fluid">
         <ul class="navbar-nav me-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('view_cards') }}">View All Pokémon Cards</a>
             </li>
         </ul>
-        <a class="navbar-brand mx-auto fw-bold" href="/">Pokémon Cards</a>
+        <a class="navbar-brand mx-auto" href="/">Pokémon Cards</a>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('add') }}">Add New Pokémon Card</a>
@@ -43,13 +43,13 @@
             Choose Your Gen!
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#" onclick="switchGeneration(1)">Gen 1</a></li>
-            <li><a class="dropdown-item" href="#" onclick="switchGeneration(2)">Gen 2</a></li>
-            <li><a class="dropdown-item" href="#" onclick="switchGeneration(3)">Gen 3</a></li>
-            <li><a class="dropdown-item" href="#" onclick="switchGeneration(4)">Gen 4</a></li>
-            <li><a class="dropdown-item" href="#" onclick="switchGeneration(5)">Gen 5</a></li>
-            <li><a class="dropdown-item" href="#" onclick="switchGeneration(6)">Gen 6</a></li>
-            <li><a class="dropdown-item" href="#" onclick="switchGeneration(7)">Gen 7</a></li>
+            <li><a class="dropdown-item" href="#" onclick="switchGeneration(1)">Generation 1</a></li>
+            <li><a class="dropdown-item" href="#" onclick="switchGeneration(2)">Generation 2</a></li>
+            <li><a class="dropdown-item" href="#" onclick="switchGeneration(3)">Generation 3</a></li>
+            <li><a class="dropdown-item" href="#" onclick="switchGeneration(4)">Generation 4</a></li>
+            <li><a class="dropdown-item" href="#" onclick="switchGeneration(5)">Generation 5</a></li>
+            <li><a class="dropdown-item" href="#" onclick="switchGeneration(6)">Generation 6</a></li>
+            <li><a class="dropdown-item" href="#" onclick="switchGeneration(7)">Generation 7</a></li>
         </ul>
     </div>
 </div>
