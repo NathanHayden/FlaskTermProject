@@ -1,24 +1,34 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="row">
-    {% if items %}
-      {% for id, item in items.items() %}
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="{{ url_for('static', filename='images/' + item.image) }}" class="card-img-top" alt="{{ item.name }}">
-            <div class="card-body">
-              <p class="card-text">{{ item.name }}</p>
-              <p class="card-text">Typing: {{ item.type }}</p>
-              <p class="card-text">Rarity: {{ item.rarity }}</p>
-              <form method="POST" action="{{ url_for('delete', item_id=id) }}">
-                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-              </form>
-            </div>
-          </div>
+    <div class="container mt-4">
+        <h1 class="text-center mb-5">Your Pokémon Cards</h1>
+        <div class="row justify-content-center">
+            {% if items %}
+                {% for id, item in items.items() %}
+                    <div class="col-md-4 mb-4 d-flex justify-content-center">
+                        <div class="card p-3">
+                            <img src="{{ url_for('static', filename='images/' + item.image) }}" class="card-img-top"
+                                 alt="{{ item.name }}" style="border-radius: 10px;">>
+                            <div class="card-body text-center">
+                                <p class="card-text">{{ item.name }}</p>
+                                <p class="card-text">Primary Typing: {{ item.type1 }}</p>
+                                {% if item.type2 %}
+                                    <p class="card-text">Secondary Typing: {{ item.type2 }}</p>
+                                {% endif %}
+                                <p class="card-text">Rarity: {{ item.rarity }}</p>
+                                <form method="POST" action="{{ url_for('delete', item_id=id) }}">
+                                    <button type="submit" class="btn btn-danger btn-sm btn-block">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h1 class="text-muted text-center mt-5 no-cards-msg">
+                    No cards added yet. Go to <a style="text-decoration:none" href="{{ url_for('add') }}"
+                                                 class="btn btn-link">"Add New Pokémon Card"</a>to get started!
+                </h1>
+            {% endif %}
         </div>
-      {% endfor %}
-    {% else %}
-      <h1 class="text-muted text-center">No cards added yet. Go to "Add New Pokémon Card" to get started!</h1>
-    {% endif %}
-  </div>
+    </div>
 {% endblock %}

@@ -1,61 +1,86 @@
 {% extends "layout.html" %}
 {% block content %}
-  <h1>Add a New Pokémon Card!</h1>
-  <form action="{{ url_for('add') }}" method="post" enctype="multipart/form-data" id="cardForm">
-    <div class="mb-3">
-      <label for="name" class="form-label">Pokémon Name</label>
-      <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="mb-3">
-      <label for="type" class="form-label">Pokémon Typing</label>
-      <select class="form-select" id="type" name="type" required>
-        <option value="">Select Type</option>
-        <option>Fire</option>
-        <option>Water</option>
-        <option>Grass</option>
-        <option>Electric</option>
-        <option>Psychic</option>
-        <option>Fighting</option>
-        <option>Dark</option>
-        <option>Steel</option>
-        <option>Fairy</option>
-        <option>Dragon</option>
-        <option>Normal</option>
-        <option>Ghost</option>
-        <option>Ice</option>
-        <option>Rock</option>
-        <option>Bug</option>
-        <option>Poison</option>
-        <option>Ground</option>
-        <option>Flying</option>
-      </select>
-    </div>
+    <h1 style="text-align: center;">Add a New Pokémon Card!</h1>
+    <form action="{{ url_for('add') }}" method="post" enctype="multipart/form-data" id="cardForm">
+        <div class="mb-3">
+            <label for="name" class="form-label">Pokémon Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="primary_type" class="form-label">Primary Pokémon Typing</label>
+            <select class="form-select" id="primary_type" name="primary_type" required>
+                <option value="">Select Primary Type</option>
+                <option>Fire</option>
+                <option>Water</option>
+                <option>Grass</option>
+                <option>Electric</option>
+                <option>Psychic</option>
+                <option>Fighting</option>
+                <option>Dark</option>
+                <option>Steel</option>
+                <option>Fairy</option>
+                <option>Dragon</option>
+                <option>Normal</option>
+                <option>Ghost</option>
+                <option>Ice</option>
+                <option>Rock</option>
+                <option>Bug</option>
+                <option>Poison</option>
+                <option>Ground</option>
+                <option>Flying</option>
+            </select>
+        </div>
 
-    <div class="mb-3">
-      <label for="rarity" class="form-label">Card Rarity</label>
-      <select class="form-select" id="rarity" name="rarity" required>
-        <option value="">Select Rarity</option>
-        <option>Common</option>
-        <option>Uncommon</option>
-        <option>Rare</option>
-        <option>Holo Rare</option>
-        <option>Ultra Rare</option>
-        <option>Secret Rare</option>
-        <option>Double Rare</option>
-        <option>Illustration Rare</option>
-        <option>Ace Spec Rare</option>
-        <option>Amazing Rare</option>
-        <option>Radiant Rare</option>
-        <option>Shiny Rare</option>
-        <option>Hyper Rare</option>
-      </select>
-    </div>
+        <div class="mb-3">
+            <label for="secondary_type" class="form-label">Secondary Pokémon Typing</label>
+            <select class="form-select" id="secondary_type" name="secondary_type">
+                <option value="">Select Secondary Type</option>
+                <option>Fire</option>
+                <option>Water</option>
+                <option>Grass</option>
+                <option>Electric</option>
+                <option>Psychic</option>
+                <option>Fighting</option>
+                <option>Dark</option>
+                <option>Steel</option>
+                <option>Fairy</option>
+                <option>Dragon</option>
+                <option>Normal</option>
+                <option>Ghost</option>
+                <option>Ice</option>
+                <option>Rock</option>
+                <option>Bug</option>
+                <option>Poison</option>
+                <option>Ground</option>
+                <option>Flying</option>
+            </select>
+        </div>
 
-    <div class="mb-3">
-      <label for="image" class="form-label">Pokémon Image</label>
-      <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
-    </div>
+        <div class="mb-3">
+            <label for="rarity" class="form-label">Card Rarity</label>
+            <select class="form-select" id="rarity" name="rarity" required>
+                <option value="">Select Rarity</option>
+                <option>Common</option>
+                <option>Uncommon</option>
+                <option>Rare</option>
+                <option>Holo Rare</option>
+                <option>Ultra Rare</option>
+                <option>Secret Rare</option>
+                <option>Double Rare</option>
+                <option>Illustration Rare</option>
+                <option>Ace Spec Rare</option>
+                <option>Amazing Rare</option>
+                <option>Radiant Rare</option>
+                <option>Shiny Rare</option>
+                <option>Hyper Rare</option>
+            </select>
+        </div>
 
-    <button type="submit" class="btn btn-success">Add Card</button>
-  </form>
+        <div class="mb-3">
+            <label for="image" class="form-label">Pokémon Image</label>
+            <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Add Card</button>
+    </form>
 {% endblock %}
