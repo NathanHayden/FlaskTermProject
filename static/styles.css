@@ -94,13 +94,16 @@ input:focus, select:focus, textarea:focus {
 .card-img-top {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .card {
     border: 4px solid #ffcc00;
     background-color: rgba(0, 0, 0, 0.5);
     transition: transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 250px;
+    font-size:0.75rem;
 }
 
 .card:hover {
@@ -110,18 +113,17 @@ input:focus, select:focus, textarea:focus {
 .card-body {
     text-transform: uppercase;
     text-align: center;
-    padding: 25px;
+    padding: 10px;
     color: white;
 }
 
 .btn-danger {
-    font-size: 1rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     border: 2px solid #ffcc00;
     background-color: #2ecc71;
     color: #000;
     width: 100%;
-    padding: 15px;
     transition: all 0.3s ease-in-out;
 }
 
