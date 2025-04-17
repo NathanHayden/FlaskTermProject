@@ -79,17 +79,34 @@ input:focus, select:focus, textarea:focus {
     text-transform: uppercase;
     border: 2px solid #ffcc00;
     background-color: #2ecc71;
-    color: black;
+    color: #ffcc00;
     width: 100%;
     padding: 15px;
     transition: all 0.3s ease-in-out;
 }
 
 .btn-success:hover {
-    background-color: #27ae60;
+    background-color: #00ff6c;
     transform: scale(1.05);
-    box-shadow: 0 0 20px #ffcc00;
+    box-shadow: 0 0 20px #00ff6c;
 }
+
+.btn-danger {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border: 2px solid #ffcc00;
+    background-color: #ea2311;
+    color: #ffcc00;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: #ff0000;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff0000;
+}
+
 
 .card-img-top {
     width: 100%;
@@ -115,21 +132,6 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
     padding: 10px;
     color: white;
-}
-
-.btn-danger {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    border: 2px solid #ffcc00;
-    background-color: #2ecc71;
-    color: #000;
-    width: 100%;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-danger:hover {
-    background-color: #ff0000;
-    transform: scale(1.05);
 }
 
 .no-cards-msg {
