@@ -5,19 +5,22 @@
         <div class="row justify-content-center">
             {% if items %}
                 {% for id, item in items.items() %}
-                    <div class="col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
                         <div class="card">
                             <img src="{{ url_for('static', filename='images/' + item.image) }}" class="card-img-top"
                                  alt="{{ item.name }}">
                             <div class="card-body text-center">
-                                <p class="card-text">Pokémon Name:<br>{{ item.name }}</p>
-                                <p class="card-text">Primary Typing:<br>{{ item.type1 }}</p>
+                                <p class="card-text">Pokémon Name:<br><span class="yellow-text">{{ item.name }}</span>
+                                </p>
+                                <p class="card-text">Primary Typing:<br><span
+                                        class="yellow-text">{{ item.type1 }}</span></p>
                                 {% if item.type2 %}
-                                    <p class="card-text">Secondary Typing:<br>{{ item.type2 }}</p>
+                                    <p class="card-text">Secondary Typing:<br><span
+                                            class="yellow-text">{{ item.type2 }}</span></p>
                                 {% endif %}
-                                <p class="card-text">Rarity:<br>{{ item.rarity }}</p>
+                                <p class="card-text">Rarity:<br><span class="yellow-text">{{ item.rarity }}</span></p>
                                 <form method="POST" action="{{ url_for('delete', item_id=id) }}">
-                                    <button type="submit" class="btn btn-danger btn-sm btn-block">Delete</button>
+                                    <button type="submit" class="btn btn-danger d-block w-100 mt-3">Delete</button>
                                 </form>
                             </div>
                         </div>

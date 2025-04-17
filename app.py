@@ -89,6 +89,10 @@ def too_large():
 def delete(item_id):
     items = session.get("items", {})
     if item_id in items:
+        file_to_delete = os.path.join(file_save_location, items[item_id]["image"])
+        if os.path.exists(file_to_delete):
+            os.remove(file_to_delete)
+
         del items[item_id]
         flash("Card deleted successfully!", "success")
     else:
