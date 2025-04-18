@@ -1,6 +1,6 @@
 function switchGeneration(gen) {
-    const imageContainer = document.getElementById('pokemon-images');
-    const images = imageContainer.getElementsByTagName('img');
+    const imageContainer = document.getElementById("pokemon-images");
+    const images = imageContainer.getElementsByTagName("img");
 
     let startId = 0;
     if (gen === 1) startId = 1;

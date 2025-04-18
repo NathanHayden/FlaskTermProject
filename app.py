@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = "password"
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 Session(app)
 
 file_save_location = "static/images"
@@ -53,10 +53,6 @@ def add():
         extension = os.path.splitext(uploaded_file.filename)[1].lower()
         if extension not in allowed_types:
             flash("Invalid file type. Only .png, .jpg, and .jpeg are allowed.", "danger")
-            return redirect(url_for("add"))
-
-        if uploaded_file.filename == "":
-            flash("Please select a file to upload.", "danger")
             return redirect(url_for("add"))
 
         if uploaded_file.content_length > 16 * 1024 * 1024:
